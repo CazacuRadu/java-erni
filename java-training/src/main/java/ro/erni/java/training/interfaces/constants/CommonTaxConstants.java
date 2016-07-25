@@ -17,7 +17,11 @@ namespaces polluted by the constants in the interface.
 public interface CommonTaxConstants {
     
     public static final String MAIN_KANTON_NAME = "Zuerich";
+ 
+    public static final String HAUPT_KANTON_NAME = "Thurgau";
     
+    public static final String FREMD_SYSTEM_ID = "HRA";
+
     public static final BigDecimal TAXATION_PERCENT = new BigDecimal("21.05");
     
     public static final String TAX_TYPE = "ELM";
