@@ -23,5 +23,9 @@ public interface CommonTaxConstants {
     public static final String TAX_TYPE = "ELM";
     
     public static final String DOCUMENT_TYPE = "SDEC";
+    
+    public static final String HAUPT_KANTON_NAME = "Thurgau";
+    
+    public static final String FREMD_SYSTEM_ID = "HRA";
 
 }
