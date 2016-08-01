@@ -1,6 +1,9 @@
 package ro.erni.java.training.ojects;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
 
@@ -11,12 +14,17 @@ public class Student {
 	private LocalDate birthday;
 
 	private float average;
+	
+	private LocalDate today = LocalDate.now();
+	
+	private List<Integer> mark = new ArrayList<>();
 
-	public Student(String fName, String lName, LocalDate dob, float avg) {
-		firstName = fName;
-		lastName = lName;
-		birthday = dob;
-		average = avg;
+	public Student(String fName, String lName, LocalDate dob, float avg, List<Integer> marks) {
+		this.firstName = fName;
+		this.lastName = lName;
+		this.birthday = dob;
+		this.average = avg;
+		this.mark = marks;
 	}
 	
 	public Student(String fName, String lName) {
@@ -39,26 +47,39 @@ public class Student {
 	public float getAverage() {
 		return average;
 	}
+	
+	public List<Integer> getMarks() {
+		return mark;
+	}
 
 	public void setFName(String fName) {
-		firstName = fName;
+		this.firstName = fName;
 	}
 
 	public void setLName(String lName) {
-		lastName = lName;
+		this.lastName = lName;
 	}
 
 	public void setDOB(LocalDate dob) {
-		birthday = dob;
+		this.birthday = dob;
 	}
 
 	public void setAvg(float avg) {
-		average = avg;
+		this.average = avg;
+	}
+	
+	public void setMarks(List<Integer> marks) {
+		this.mark = marks;
 	}
 	
 	@Override
 	public String toString() {
 
 		return firstName + " " + lastName;
+	}
+	
+	public Period getAge() {
+		Period p = Period.between(birthday, today);
+		return p;
 	}
 }
