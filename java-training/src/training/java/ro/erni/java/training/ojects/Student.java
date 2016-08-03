@@ -13,17 +13,15 @@ public class Student {
 
 	private LocalDate birthday;
 
-	private float average;
 	
 	private LocalDate today = LocalDate.now();
 	
 	private List<Integer> mark = new ArrayList<>();
 
-	public Student(String fName, String lName, LocalDate dob, float avg, List<Integer> marks) {
+	public Student(String fName, String lName, LocalDate dob, List<Integer> marks) {
 		this.firstName = fName;
 		this.lastName = lName;
 		this.birthday = dob;
-		this.average = avg;
 		this.mark = marks;
 	}
 	
@@ -43,10 +41,6 @@ public class Student {
 	public LocalDate getBirthday() {
 		return birthday;
 	}
-
-	public float getAverage() {
-		return average;
-	}
 	
 	public List<Integer> getMarks() {
 		return mark;
@@ -63,13 +57,13 @@ public class Student {
 	public void setDOB(LocalDate dob) {
 		this.birthday = dob;
 	}
-
-	public void setAvg(float avg) {
-		this.average = avg;
-	}
 	
 	public void setMarks(List<Integer> marks) {
 		this.mark = marks;
+	}
+	
+	public double getAvg(){
+		return getMarks().stream().mapToInt(val -> val).average().getAsDouble(); 
 	}
 	
 	@Override
