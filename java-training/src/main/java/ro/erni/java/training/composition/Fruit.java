@@ -2,7 +2,7 @@ package ro.erni.java.training.composition;
 
 public class Fruit implements Growing {
 
-	Fruit() {
+	public Fruit() {
 	}
 
 	// public int peel() {

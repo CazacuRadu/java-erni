@@ -15,5 +15,10 @@ public class Peel {
 
 		return peelCount;
 	}
+	
+	public int peelZaFruit() {
+
+		return peelCount + 1;
+	}
 
 }
